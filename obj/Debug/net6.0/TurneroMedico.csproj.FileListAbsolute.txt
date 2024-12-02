@@ -1,0 +1,8 @@
+C:\Users\Lucas\Desktop\Medico\TurneroMedico\obj\Debug\net6.0\TurneroMedico.csproj.AssemblyReference.cache
+C:\Users\Lucas\Desktop\Medico\TurneroMedico\obj\Debug\net6.0\TurneroMedico.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lucas\Desktop\Medico\TurneroMedico\obj\Debug\net6.0\TurneroMedico.AssemblyInfoInputs.cache
+C:\Users\Lucas\Desktop\Medico\TurneroMedico\obj\Debug\net6.0\TurneroMedico.AssemblyInfo.cs
+C:\Users\Lucas\Desktop\Medico\TurneroMedico\obj\Debug\net6.0\TurneroMedico.csproj.CoreCompileInputs.cache
+C:\Users\Lucas\Desktop\Medico\TurneroMedico\obj\Debug\net6.0\TurneroMedico.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Lucas\Desktop\Medico\TurneroMedico\obj\Debug\net6.0\TurneroMedico.RazorAssemblyInfo.cache
+C:\Users\Lucas\Desktop\Medico\TurneroMedico\obj\Debug\net6.0\TurneroMedico.RazorAssemblyInfo.cs
