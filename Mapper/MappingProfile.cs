@@ -6,8 +6,8 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        CreateMap<Paciente, PacienteDto>();
-        CreateMap<Doctor, DoctorDto>();
-        CreateMap<Turno, TurnoDto>();
+        CreateMap<Turno, TurnoDTO>()
+            .ForMember(dest => dest.PacienteNombre, opt => opt.MapFrom(src => src.Paciente.Nombre))
+            .ForMember(dest => dest.DoctorNombre, opt => opt.MapFrom(src => src.Doctor.Especialidad));
     }
 }
