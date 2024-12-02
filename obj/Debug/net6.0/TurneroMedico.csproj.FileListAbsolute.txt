@@ -8,9 +8,11 @@ C:\Users\Lucas\Desktop\Medico\TurneroMedico\bin\Debug\net6.0\TurneroMedico.dll
 C:\Users\Lucas\Desktop\Medico\TurneroMedico\bin\Debug\net6.0\TurneroMedico.pdb
 C:\Users\Lucas\Desktop\Medico\TurneroMedico\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\Lucas\Desktop\Medico\TurneroMedico\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Lucas\Desktop\Medico\TurneroMedico\bin\Debug\net6.0\Humanizer.dll
 C:\Users\Lucas\Desktop\Medico\TurneroMedico\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\Lucas\Desktop\Medico\TurneroMedico\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\Lucas\Desktop\Medico\TurneroMedico\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Lucas\Desktop\Medico\TurneroMedico\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Lucas\Desktop\Medico\TurneroMedico\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\Lucas\Desktop\Medico\TurneroMedico\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\Lucas\Desktop\Medico\TurneroMedico\bin\Debug\net6.0\Microsoft.Identity.Client.dll

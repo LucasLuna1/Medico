@@ -6,31 +6,36 @@
 
 <h1>Turnos</h1>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Paciente</th>
-            <th>Doctor</th>
-            <th>Fecha</th>
-            <th>Hora</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var turno in Model)
-        {
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+        <thead>
             <tr>
-                <td>@turno.PacienteNombre</td>
-                <td>@turno.DoctorNombre</td>
-                <td>@turno.Fecha.ToShortDateString()</td>
-                <td>@turno.Hora</td>
-                <td>
-                    <a href="@Url.Action("Edit", "Turno", new { id = turno.Id })" class="btn btn-primary">Editar</a>
-                    <a href="@Url.Action("Delete", "Turno", new { id = turno.Id })" class="btn btn-danger">Eliminar</a>
-                </td>
+                <th>Paciente</th>
+                <th>Doctor</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Acciones</th>
             </tr>
-        }
-    </tbody>
-</table>
-
-<a href="@Url.Action("Create", "Turno")" class="btn btn-success">Crear Nuevo Turno</a>
+        </thead>
+        <tbody>
+            @foreach (var turno in Model)
+            {
+                <tr>
+                    <td>@(turno.PacienteNombre ?? "No asignado")</td>
+                    <td>@(turno.DoctorNombre ?? "No asignado")</td>
+                    <td>@turno.Fecha.ToShortDateString()</td>
+                    <td>@turno.Hora</td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Turno", new { id = turno.Id })" class="btn btn-primary">Editar</a>
+                        <a href="@Url.Action("Delete", "Turno", new { id = turno.Id })" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No hay turnos disponibles.</p>
+}
