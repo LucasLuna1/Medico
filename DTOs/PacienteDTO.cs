@@ -6,5 +6,9 @@ namespace TurneroMedico.DTOs
         public string Nombre { get; set; } = string.Empty;
         public string Apellido { get; set; } = string.Empty;
         public DateTime FechaNacimiento { get; set; }
+
+        // Propiedad calculada opcional para obtener la edad
+        public int Edad => DateTime.Now.Year - FechaNacimiento.Year -
+                           (DateTime.Now.DayOfYear < FechaNacimiento.DayOfYear ? 1 : 0);
     }
 }

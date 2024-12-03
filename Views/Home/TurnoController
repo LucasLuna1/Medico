@@ -1,0 +1,21 @@
+public class TurnoController : Controller
+{
+    // Acción que devuelve la vista para crear un nuevo turno
+    public IActionResult Create()
+    {
+        return View();
+    }
+
+    // Acción que guarda el turno
+    [HttpPost]
+    public IActionResult Create(TurnoDTO turno)
+    {
+        if (ModelState.IsValid)
+        {
+            // Lógica para guardar el turno (por ejemplo, en la base de datos)
+            return RedirectToAction("Index"); // Regresa a la lista de turnos
+        }
+
+        return View(turno); // Si hay errores, vuelve a la vista de creación
+    }
+}
