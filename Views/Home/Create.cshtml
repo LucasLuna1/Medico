@@ -9,12 +9,12 @@
 <form asp-action="Create" method="post">
     <div class="form-group">
         <label for="PacienteId">Paciente</label>
-        <input asp-for="PacienteId" class="form-control" />
+        <input asp-for="PacienteId" class="form-control" type="text" />
         <span asp-validation-for="PacienteId" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label for="DoctorId">Doctor</label>
-        <input asp-for="DoctorId" class="form-control" />
+        <input asp-for="DoctorId" class="form-control" type="text" />
         <span asp-validation-for="DoctorId" class="text-danger"></span>
     </div>
     <div class="form-group">

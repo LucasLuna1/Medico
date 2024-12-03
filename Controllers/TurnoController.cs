@@ -31,7 +31,7 @@ public class TurnoController : Controller
 {
     ViewBag.Pacientes = _context.Pacientes.ToList();
     ViewBag.Doctores = _context.Doctores.ToList();
-    return View();
+    return View("~/Views/Home/Create.cshtml");
 }
 
 public async Task<IActionResult> Edit(int id)

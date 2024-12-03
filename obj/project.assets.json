@@ -2062,19 +2062,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\GabrielF\\.nuget\\packages\\": {}
+    "C:\\Users\\Lucas\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\GabrielF\\Desktop\\Final\\Medico\\TurneroMedico.csproj",
+      "projectUniqueName": "C:\\Users\\Lucas\\Desktop\\Turno\\Medico\\TurneroMedico.csproj",
       "projectName": "TurneroMedico",
-      "projectPath": "C:\\Users\\GabrielF\\Desktop\\Final\\Medico\\TurneroMedico.csproj",
-      "packagesPath": "C:\\Users\\GabrielF\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\GabrielF\\Desktop\\Final\\Medico\\obj\\",
+      "projectPath": "C:\\Users\\Lucas\\Desktop\\Turno\\Medico\\TurneroMedico.csproj",
+      "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Lucas\\Desktop\\Turno\\Medico\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\GabrielF\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
