@@ -8,10 +8,9 @@
 
 <a href="@Url.Action("Create", "Turno")" class="btn btn-primary mb-3">Agregar Nuevo Turno</a>
 
-
 @if (Model != null && Model.Any())
 {
-    <table class="table table-bordered">
+    <table class="table table-bordered table-striped">
         <thead>
             <tr>
                 <th>Paciente</th>
@@ -25,14 +24,13 @@
             @foreach (var turno in Model)
             {
                 <tr>
-                    <td>@(turno.PacienteNombre ?? "No asignado")</td>
-                    <td>@(turno.DoctorNombre ?? "No asignado")</td>
+                    <td>@turno.PacienteNombre</td>
+                    <td>@turno.DoctorNombre</td>
                     <td>@turno.Fecha.ToShortDateString()</td>
                     <td>@turno.Hora</td>
                     <td>
-                        <a href="@Url.Action("Details", "Turnos", new { id = turno.Id })" class="btn btn-info btn-sm">Ver</a>
-                        <a href="@Url.Action("Edit", "Turnos", new { id = turno.Id })" class="btn btn-warning btn-sm">Editar</a>
-                        <a href="@Url.Action("Delete", "Turnos", new { id = turno.Id })" class="btn btn-danger btn-sm">Eliminar</a>
+                        <a href="@Url.Action("Edit", "Turno", new { id = turno.Id })" class="btn btn-warning btn-sm">Editar</a>
+                        <a href="@Url.Action("Delete", "Turno", new { id = turno.Id })" class="btn btn-danger btn-sm">Eliminar</a>
                     </td>
                 </tr>
             }

@@ -12,30 +12,26 @@ public class TurnoRepository : ITurnoRepository
     }
 
     public async Task<List<Turno>> GetAllTurnosAsync()
-{
-    return await _context.Turnos
-        .Include(t => t.Paciente)
-        .Include(t => t.Doctor)
-        .ToListAsync();
-}
+    {
+        return await _context.Turnos.Include(t => t.Paciente).Include(t => t.Doctor).ToListAsync();
+    }
 
-public async Task<Turno> GetTurnoByIdAsync(int id)
+    public async Task<Turno> GetTurnoByIdAsync(int id)
 {
     var turno = await _context.Turnos
         .Include(t => t.Paciente)
         .Include(t => t.Doctor)
         .FirstOrDefaultAsync(t => t.Id == id);
+
     if (turno == null)
-        {
-            throw new Exception($"No se encontró un turno con el ID {id}");
-        }
+    {
+        throw new InvalidOperationException($"No se encontró un turno con el ID {id}.");
+    }
 
     return turno;
 }
 
-
-
-    public async Task AddTurnoAsync(Turno turno)
+    public async Task CreateTurnoAsync(Turno turno)
     {
         _context.Turnos.Add(turno);
         await _context.SaveChangesAsync();
@@ -46,12 +42,4 @@ public async Task<Turno> GetTurnoByIdAsync(int id)
         _context.Turnos.Update(turno);
         await _context.SaveChangesAsync();
     }
-
-    public async Task DeleteTurnoAsync(int id)
-    {
-        var turno = await GetTurnoByIdAsync(id);
-        _context.Turnos.Remove(turno);
-        await _context.SaveChangesAsync();
-    }
 }
-
