@@ -9,13 +9,13 @@
 <form id="turnoForm" asp-action="Create" method="post">
     <div class="form-group">
         <label for="PacienteId">Paciente</label>
-        <input type="text" minlength="5" maxlength="50" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" asp-for="PacienteId" class="form-control" asp-items="@(new SelectList(ViewBag.Pacientes, "Id", "Nombre"))">
-        <span asp-validation-for="PacienteId" class="text-danger" ></span>
+        <input asp-for="PacienteId" class="form-control" />
+        <span asp-validation-for="PacienteId" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label for="DoctorId">Doctor</label>
-        <input type="text" minlength="5" maxlength="50" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" asp-for="DoctorId" class="form-control" asp-items="@(new SelectList(ViewBag.Doctores, "Id", "Nombre"))">
-        <span asp-validation-for="DoctorId" class="text-danger" type="text" ></span>
+        <input asp-for="DoctorId" class="form-control" />
+        <span asp-validation-for="DoctorId" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label for="Fecha">Fecha</label>
@@ -58,8 +58,13 @@
     });
 
     document.getElementById("confirmarButton").addEventListener("click", function () {
+        // Aquí puedes realizar alguna acción adicional, como mostrar un mensaje o actualizar la vista
+        alert("Turno confirmado");
+        
+        // No se redirige al Index, pero puedes agregar un mensaje o mostrar los datos de turno creados
+        // Si deseas enviar el formulario sin redirigir, usa algo como:
         const form = document.getElementById("turnoForm");
-        form.submit();
+        form.submit(); // Si quieres enviar el formulario después de la confirmación.
     });
 
     document.getElementById("cancelarButton").addEventListener("click", function () {

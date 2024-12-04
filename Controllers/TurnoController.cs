@@ -29,7 +29,7 @@ public class TurnoController : Controller
     {
         ViewBag.Pacientes = _context.Pacientes.ToList();
         ViewBag.Doctores = _context.Doctores.ToList();
-        return View("~/Views/Home/Create.cshtml");
+        return View();
     }
 
     // POST: Turno/Create
