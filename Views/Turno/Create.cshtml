@@ -9,28 +9,32 @@
 <form id="turnoForm" asp-action="Create" method="post">
     <div class="form-group">
         <label for="PacienteId">Paciente</label>
-        <input asp-for="PacienteId" class="form-control" />
+        <select asp-for="PacienteId" class="form-control" asp-items="@(new SelectList(ViewBag.Pacientes, "Id", "NombreCompleto"))"></select>
         <span asp-validation-for="PacienteId" class="text-danger"></span>
     </div>
+
     <div class="form-group">
         <label for="DoctorId">Doctor</label>
-        <input asp-for="DoctorId" class="form-control" />
+        <select asp-for="DoctorId" class="form-control" asp-items="@(new SelectList(ViewBag.Doctores, "Id", "Nombre"))"></select>
         <span asp-validation-for="DoctorId" class="text-danger"></span>
     </div>
+
     <div class="form-group">
         <label for="Fecha">Fecha</label>
         <input asp-for="Fecha" class="form-control" type="date" />
         <span asp-validation-for="Fecha" class="text-danger"></span>
     </div>
+
     <div class="form-group">
         <label for="Hora">Hora</label>
         <input asp-for="Hora" class="form-control" type="time" />
         <span asp-validation-for="Hora" class="text-danger"></span>
     </div>
 
-    <button type="button" class="btn btn-primary" id="guardarButton">Guardar</button>
+    <button type="submit" class="btn btn-primary">Guardar</button>
     <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
 </form>
+
 
 <!-- Modal de confirmación -->
 <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">

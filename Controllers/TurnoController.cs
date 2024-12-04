@@ -3,6 +3,8 @@ using AutoMapper;
 using TurneroMedico.DTOs;
 using TurneroMedico.Models;
 using TurneroMedico.Data;
+using Microsoft.EntityFrameworkCore;
+
 
 public class TurnoController : Controller
 {
@@ -18,19 +20,41 @@ public class TurnoController : Controller
     }
 
     public async Task<IActionResult> Index()
+{
+    var turnos = await _context.Turnos
+        .Include(t => t.Paciente)
+        .Include(t => t.Doctor)
+        .ToListAsync();
+
+    var turnosDto = turnos.Select(t => new TurnoDTO
     {
-        var turnos = await _turnoRepository.GetAllTurnosAsync();
-        var turnosDto = _mapper.Map<List<TurnoDTO>>(turnos);
-        return View(turnosDto);
-    }
+        Id = t.Id,
+        PacienteId = t.PacienteId,
+        PacienteNombre = $"{t.Paciente.Nombre} {t.Paciente.Apellido}",
+        DoctorId = t.DoctorId,
+        DoctorNombre = t.Doctor.Nombre,
+        Fecha = t.FechaHora.Date,
+        Hora = t.FechaHora.TimeOfDay
+    }).ToList();
+
+    return View(turnosDto);
+}
+
 
     // GET: Turno/Create
-    public IActionResult Create()
-    {
-        ViewBag.Pacientes = _context.Pacientes.ToList();
-        ViewBag.Doctores = _context.Doctores.ToList();
-        return View();
-    }
+   public IActionResult Create()
+{
+    ViewBag.Pacientes = _context.Pacientes
+        .Select(p => new { p.Id, NombreCompleto = $"{p.Nombre} {p.Apellido}" })
+        .ToList();
+        
+    ViewBag.Doctores = _context.Doctores
+        .Select(d => new { d.Id, d.Nombre })
+        .ToList();
+        
+    return View();
+}
+
 
     // POST: Turno/Create
     [HttpPost]
