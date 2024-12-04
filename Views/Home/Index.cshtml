@@ -1,4 +1,6 @@
 @model IEnumerable<TurneroMedico.DTOs.TurnoDTO>
+@using TurneroMedico.DTOs
+
 
 @{
     ViewData["Title"] = "Lista de Turnos";
@@ -10,32 +12,28 @@
 
 @if (Model != null && Model.Any())
 {
-    <table class="table table-bordered table-striped">
-        <thead>
+    <table>
+    <thead>
+        <tr>
+            <th>Paciente</th>
+            <th>Doctor</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
             <tr>
-                <th>Paciente</th>
-                <th>Doctor</th>
-                <th>Fecha</th>
-                <th>Hora</th>
-                <th>Acciones</th>
+                <td>@item.PacienteNombre</td>
+                <td>@item.DoctorNombre</td>
+                <td>@item.Fecha.ToShortDateString()</td>
+                <td>@item.Hora</td>
             </tr>
-        </thead>
-        <tbody>
-            @foreach (var turno in Model)
-            {
-                <tr>
-                    <td>@turno.PacienteNombre</td>
-                    <td>@turno.DoctorNombre</td>
-                    <td>@turno.Fecha.ToShortDateString()</td>
-                    <td>@turno.Hora</td>
-                    <td>
-                        <a href="@Url.Action("Edit", "Turno", new { id = turno.Id })" class="btn btn-warning btn-sm">Editar</a>
-                        <a href="@Url.Action("Delete", "Turno", new { id = turno.Id })" class="btn btn-danger btn-sm">Eliminar</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+        }
+    </tbody>
+</table>
+
 }
 else
 {

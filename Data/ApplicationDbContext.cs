@@ -10,5 +10,14 @@ namespace TurneroMedico.Data
         public DbSet<Paciente> Pacientes { get; set; } = null!;
         public DbSet<Doctor> Doctores { get; set; } = null!;
         public DbSet<Turno> Turnos { get; set; } = null!;
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Paciente>()
+                .HasKey(p => p.Id);
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
+

@@ -6,28 +6,19 @@
 
 <h1>Editar Turno</h1>
 
-<form asp-action="Edit" method="post">
-    <input type="hidden" asp-for="Id" />
-    <div class="form-group">
+<form method="post">
+    <div>
         <label for="PacienteId">Paciente</label>
-        <input asp-for="PacienteId" class="form-control" />
-        <span asp-validation-for="PacienteId" class="text-danger"></span>
+        <select asp-for="PacienteId" asp-items="ViewBag.Pacientes" class="form-control"></select>
     </div>
-    <div class="form-group">
-        <label for="DoctorId">Doctor</label>
-        <input asp-for="DoctorId" class="form-control" />
-        <span asp-validation-for="DoctorId" class="text-danger"></span>
+
+    <div>
+     <label for="DoctorId">Doctor</label>
+        <select asp-for="DoctorId" asp-items="ViewBag.Doctores" class="form-control"></select>
     </div>
-    <div class="form-group">
-        <label for="Fecha">Fecha</label>
-        <input asp-for="Fecha" class="form-control" type="date" />
-        <span asp-validation-for="Fecha" class="text-danger"></span>
+    <div>
+        <label for="Hora">Hora:</label>
+        <input asp-for="Hora" type="time" />
     </div>
-    <div class="form-group">
-        <label for="Hora">Hora</label>
-        <input asp-for="Hora" class="form-control" type="time" />
-        <span asp-validation-for="Hora" class="text-danger"></span>
-    </div>
-    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    <button type="submit">Guardar</button>
 </form>
