@@ -1,18 +1,177 @@
+/* General styles */
 html {
   font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-html {
   position: relative;
   min-height: 100%;
 }
 
+@media (min-width: 768px) {
+  html {
+      font-size: 16px;
+  }
+}
+
 body {
-  margin-bottom: 60px;
+  margin: 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+/* Títulos */
+h1 {
+  color: #495057;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Botones generales */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #bd2130;
+}
+
+a.btn {
+  color: white;
+}
+
+/* Botón específico para 'Crear' */
+/* Estilo para el contenedor del botón */
+.crear {
+  text-align: center; /* Centra el contenido dentro del <p> */
+  margin-bottom: 20px;
+}
+
+/* Estilo para el botón dentro de .crear */
+.crear a {
+  display: inline-block; /* Asegura que el botón tenga espacio y forma adecuados */
+  background-color: #28a745; /* Verde para el botón */
+  color: white; /* Texto blanco */
+  text-decoration: none; /* Elimina el subrayado */
+  padding: 10px 20px; /* Tamaño del botón */
+  border-radius: 5px; /* Bordes redondeados */
+  font-weight: bold; /* Texto más grueso */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Suaviza el cambio de color y escala */
+}
+
+/* Efecto hover para el botón */
+.crear a:hover {
+  background-color: #218838; /* Verde más oscuro */
+  transform: scale(1.05); /* Agranda ligeramente el botón */
+}
+
+/* Opcional: Añadir sombra al botón */
+.crear a:active {
+  background-color: #1e7e34; /* Verde más oscuro aún para el clic */
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2); /* Efecto presionado */
+}
+
+/* Tablas */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+  border: 1px solid #dee2e6;
+  padding: 10px 15px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #343a40;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* Links de acciones en tabla */
+.table a {
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.table a[asp-action="Edit"] {
+  background-color: #007bff;
+}
+
+.table a[asp-action="Edit"]:hover {
+  background-color: #0056b3;
+}
+
+.table a[asp-action="Delete"] {
+  background-color: #dc3545;
+}
+
+.table a[asp-action="Delete"]:hover {
+  background-color: #bd2130;
+}
+
+/* Formulario */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+input[type="date"], input[type="time"] {
+  font-size: 1rem;
+}
+
+label.control-label {
+  font-weight: bold;
+  color: #495057;
+}
+
+.text-danger {
+  color: #dc3545;
+}
+
+/* Detalle y confirmación */
+dl.row dt {
+  font-weight: bold;
+  color: #495057;
+}
+
+dl.row dd {
+  margin-bottom: 10px;
 }

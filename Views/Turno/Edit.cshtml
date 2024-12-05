@@ -1,0 +1,48 @@
+@model TurneroMedico.DTOs.TurnoDTO
+
+@{
+    ViewData["Title"] = "Editar Turno";
+}
+
+<h1>Editar Turno</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="PacienteNombre" class="control-label">Nombre del Paciente</label>
+                <input asp-for="PacienteNombre" class="form-control" />
+                <span asp-validation-for="PacienteNombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DoctorNombre" class="control-label">Nombre del Doctor</label>
+                <input asp-for="DoctorNombre" class="form-control" />
+                <span asp-validation-for="DoctorNombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fecha">Fecha</label>
+                <input asp-for="Fecha" class="form-control" type="date" />
+                <span asp-validation-for="Fecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hora">Hora</label>
+                <input asp-for="Hora" class="form-control" type="time" />
+                <span asp-validation-for="Hora" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver al Listado</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

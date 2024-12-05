@@ -1,0 +1,38 @@
+﻿@model IEnumerable<TurneroMedico.DTOs.TurnoDTO>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Crear Turno</h1>
+
+<p class="crear">
+    <a asp-action="Create" asp-controller="Turno">Crear un Nuevo turno</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.PacienteNombre)</th>
+            <th>@Html.DisplayNameFor(model => model.DoctorNombre)</th>
+            <th>@Html.DisplayNameFor(model => model.Fecha)</th>
+            <th>@Html.DisplayNameFor(model => model.Hora)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.PacienteNombre)</td>
+                <td>@Html.DisplayFor(modelItem => item.DoctorNombre)</td>
+                <td>@Html.DisplayFor(modelItem => item.Fecha)</td>
+                <td>@Html.DisplayFor(modelItem => item.Hora)</td>
+                <td>
+                    <a asp-action="Edit" asp-controller="Turno" asp-route-id="@item.Id">Editar</a> |
+                    <a asp-action="Delete" asp-controller="Turno" asp-route-id="@item.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
