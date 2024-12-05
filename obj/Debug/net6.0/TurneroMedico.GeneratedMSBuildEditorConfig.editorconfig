@@ -36,20 +36,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lucas/Desktop/Turno/Medico/Views/Turno/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9cQ3JlYXRlLmNzaHRtbA==
+[C:/Users/Lucas/Desktop/Turno/Medico/Views/Turnos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lucas/Desktop/Turno/Medico/Views/Turno/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9cRGVsZXRlLmNzaHRtbA==
+[C:/Users/Lucas/Desktop/Turno/Medico/Views/Turnos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lucas/Desktop/Turno/Medico/Views/Turno/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9cRWRpdC5jc2h0bWw=
+[C:/Users/Lucas/Desktop/Turno/Medico/Views/Turnos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lucas/Desktop/Turno/Medico/Views/Turno/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9cSW5kZXguY3NodG1s
+[C:/Users/Lucas/Desktop/Turno/Medico/Views/Turnos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lucas/Desktop/Turno/Medico/Views/_ViewImports.cshtml]

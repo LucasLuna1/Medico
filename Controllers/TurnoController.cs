@@ -3,153 +3,104 @@ using AutoMapper;
 using TurneroMedico.DTOs;
 using TurneroMedico.Models;
 using TurneroMedico.Data;
-using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-public class TurnoController : Controller
+namespace TurneroMedico.Controllers
 {
-    private readonly ITurnoRepository _turnoRepository;
-    private readonly IMapper _mapper;
-    private readonly ApplicationDbContext _context;
-
-    public TurnoController(ITurnoRepository turnoRepository, IMapper mapper, ApplicationDbContext context)
+    public class TurnoController : Controller
     {
-        _turnoRepository = turnoRepository;
-        _mapper = mapper;
-        _context = context;
-    }
+        private readonly ITurnoRepository<Turno> _turnorepository;
+        private readonly IMapper _mapper;
 
-    public async Task<IActionResult> Index()
-    {
-        var turnos = await _context.Turnos
-            .Include(t => t.Paciente)
-            .Include(t => t.Doctor)
-            .ToListAsync();
-
-        var turnosDto = turnos.Select(t => new TurnoDTO
+        public TurnoController(ITurnoRepository<Turno> turnoRepository, IMapper mapper)
         {
-            Id = t.Id,
-            PacienteNombre = t.Paciente.Nombre,  // Solo se usa el 'Nombre' del paciente
-            DoctorId = t.DoctorId,
-            Fecha = t.FechaHora.Date,
-            Hora = t.FechaHora.TimeOfDay
-        }).ToList();
-
-        return View(turnosDto);
-    }
-
-    // GET: Turno/Create
-    [HttpGet]
-    public IActionResult Create()
-    {        
-        return View();
-    }
-
-    // POST: Turno/Create
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(TurnoDTO turnoDto)
-    {
-        if (!ModelState.IsValid)
-        {
-            ViewBag.Doctores = _context.Doctores.ToList();
-            return View(turnoDto);
+            _turnorepository = turnoRepository;
+            _mapper = mapper;
         }
 
-        // Buscar o crear el paciente
-        var nombrePaciente = turnoDto.PacienteNombre.Trim();
-
-        // Realizar la búsqueda en memoria solo con el 'Nombre' del paciente
-        var paciente = _context.Pacientes
-            .AsEnumerable()  // Ejecuta la consulta en memoria
-            .FirstOrDefault(p => p.Nombre == nombrePaciente);  // Solo busca por 'Nombre'
-
-        if (paciente == null)
+        // GET: Turno
+        public async Task<IActionResult> Index()
         {
-            var nuevoPaciente = new Paciente
+            var turnos = await _turnorepository.GetAllAsync();
+            var turnosDTO = _mapper.Map<IEnumerable<TurnoDTO>>(turnos);
+            return View(turnosDTO);
+        }
+
+        // GET: Turno/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Turno/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(TurnoDTO turnoDTO)
+        {
+            if (ModelState.IsValid)
             {
-                Nombre = nombrePaciente,
-                FechaNacimiento = DateTime.MinValue  // Establecer un valor por defecto
-            };
-            _context.Pacientes.Add(nuevoPaciente);
-            await _context.SaveChangesAsync();
-            paciente = nuevoPaciente;
+                var turno = _mapper.Map<Turno>(turnoDTO);
+                await _turnorepository.AddAsync(turno);
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(turnoDTO);
         }
 
-        // Crear el turno
-        var turno = new Turno
+        // GET: Turno/Edit/5
+        public async Task<IActionResult> Edit(int id)
         {
-            PacienteId = paciente.Id,
-            DoctorId = turnoDto.DoctorId,
-            FechaHora = turnoDto.Fecha.Add(turnoDto.Hora)
-        };
-
-        await _turnoRepository.CreateTurnoAsync(turno);
-        return RedirectToAction(nameof(Index));
-    }
-
-    // GET: Turno/Edit/{id}
-    [HttpGet]
-    public async Task<IActionResult> Edit(int id)
-    {
-        var turno = await _turnoRepository.GetTurnoByIdAsync(id);
-        if (turno == null) return NotFound();
-        ViewBag.Pacientes = _context.Pacientes.ToList();
-        ViewBag.Doctores = _context.Doctores.ToList();
-        var turnoDto = _mapper.Map<TurnoDTO>(turno);
-        return View(turnoDto);
-    }
-
-    // POST: Turno/Edit/{id}
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, TurnoDTO turnoDto)
-    {
-        if (!ModelState.IsValid) return View(turnoDto);
-        if (id != turnoDto.Id) return BadRequest();
-
-        // Buscar o crear el paciente
-        var nombrePaciente = turnoDto.PacienteNombre.Trim();
-        
-        // Realizar la búsqueda en memoria solo con el 'Nombre' del paciente
-        var paciente = _context.Pacientes
-            .AsEnumerable()  // Ejecuta la consulta en memoria
-            .FirstOrDefault(p => p.Nombre == nombrePaciente);  // Solo busca por 'Nombre'
-
-        if (paciente == null)
-        {
-            paciente = new Paciente
+            var turno = await _turnorepository.GetByIdAsync(id);
+            if (turno == null)
             {
-                Nombre = nombrePaciente,
-                FechaNacimiento = DateTime.MinValue  // Establecer un valor por defecto
-            };
-            _context.Pacientes.Add(paciente);
-            await _context.SaveChangesAsync();
+                return NotFound();
+            }
+
+            var turnoDTO = _mapper.Map<TurnoDTO>(turno);
+            return View(turnoDTO);
         }
 
-        // Buscar o crear el doctor
-        var nombreDoctor = turnoDto.DoctorNombre.Trim();
-        var doctor = _context.Doctores.FirstOrDefault(d => d.Nombre == nombreDoctor);
-
-        if (doctor == null)
+        // POST: Turno/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, TurnoDTO turnoDTO)
         {
-            doctor = new Doctor
+            if (id != turnoDTO.Id)
             {
-                Nombre = nombreDoctor
-            };
-            _context.Doctores.Add(doctor);
-            await _context.SaveChangesAsync();
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                var turno = _mapper.Map<Turno>(turnoDTO);
+                await _turnorepository.UpdateAsync(turno);
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(turnoDTO);
         }
 
-        // Actualizar el turno
-        var turno = new Turno
+        // GET: Turno/Delete/5
+        public async Task<IActionResult> Delete(int id)
         {
-            Id = id,
-            PacienteId = paciente.Id,
-            DoctorId = doctor.Id,
-            FechaHora = turnoDto.Fecha.Add(turnoDto.Hora)
-        };
+            var turno = await _turnorepository.GetByIdAsync(id);
+            if (turno == null)
+            {
+                return NotFound();
+            }
 
-        await _turnoRepository.UpdateTurnoAsync(turno);
-        return RedirectToAction(nameof(Index));
+            var turnoDTO = _mapper.Map<TurnoDTO>(turno);
+            return View(turnoDTO);
+        }
+
+        // POST: Turno/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            await _turnorepository.DeleteAsync(id);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

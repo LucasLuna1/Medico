@@ -1,41 +1,8 @@
-@model IEnumerable<TurneroMedico.DTOs.TurnoDTO>
-@using TurneroMedico.DTOs
-
-
 @{
-    ViewData["Title"] = "Lista de Turnos";
+    ViewData["Title"] = "Home Page";
 }
 
-<h1>Turnos</h1>
-
-<a href="@Url.Action("Create", "Turno")" class="btn btn-primary mb-3">Agregar Nuevo Turno</a>
-
-@if (Model != null && Model.Any())
-{
-    <table>
-    <thead>
-        <tr>
-            <th>Paciente</th>
-            <th>Doctor</th>
-            <th>Fecha</th>
-            <th>Hora</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.PacienteNombre</td>
-                <td>@item.DoctorNombre</td>
-                <td>@item.Fecha.ToShortDateString()</td>
-                <td>@item.Hora</td>
-            </tr>
-        }
-    </tbody>
-</table>
-
-}
-else
-{
-    <p>No hay turnos disponibles.</p>
-}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
