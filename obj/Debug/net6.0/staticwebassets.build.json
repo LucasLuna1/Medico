@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "da3OkvB61iLldElsQT4kefSKeJpQuamHyi0CMt9wJq0=",
+  "Hash": "ojSjaFFqNjnmHt1iAMVeHtof/g3VZx9BnJHc9zVmblU=",
   "Source": "TurneroMedico",
   "BasePath": "_content/TurneroMedico",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "oq8r4nbcb2",
-      "Integrity": "AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL+c=",
+      "Fingerprint": "1udfv1jrtk",
+      "Integrity": "N/kzD7K2paDQPSo6ewLAcWT7rCxllxBT34s+7Fpc5zQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -1321,6 +1321,51 @@
   ],
   "Endpoints": [
     {
+      "Route": "css/site.1udfv1jrtk.css",
+      "AssetFile": "C:\\Users\\Lucas\\Desktop\\Turno\\Medico\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3435"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"N/kzD7K2paDQPSo6ewLAcWT7rCxllxBT34s+7Fpc5zQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 05 Dec 2024 11:52:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1udfv1jrtk"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-N/kzD7K2paDQPSo6ewLAcWT7rCxllxBT34s+7Fpc5zQ="
+        }
+      ]
+    },
+    {
       "Route": "css/site.css",
       "AssetFile": "C:\\Users\\Lucas\\Desktop\\Turno\\Medico\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -1331,7 +1376,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "194"
+          "Value": "3435"
         },
         {
           "Name": "Content-Type",
@@ -1339,11 +1384,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL+c=\""
+          "Value": "\"N/kzD7K2paDQPSo6ewLAcWT7rCxllxBT34s+7Fpc5zQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 02 Dec 2024 21:19:41 GMT"
+          "Value": "Thu, 05 Dec 2024 11:52:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1353,52 +1398,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL+c="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.oq8r4nbcb2.css",
-      "AssetFile": "C:\\Users\\Lucas\\Desktop\\Turno\\Medico\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "194"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL+c=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 02 Dec 2024 21:19:41 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "oq8r4nbcb2"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL+c="
+          "Value": "sha256-N/kzD7K2paDQPSo6ewLAcWT7rCxllxBT34s+7Fpc5zQ="
         }
       ]
     },
@@ -6263,7 +6263,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 05 Dec 2024 02:31:00 GMT"
+          "Value": "Thu, 05 Dec 2024 11:53:14 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6300,7 +6300,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 05 Dec 2024 02:31:00 GMT"
+          "Value": "Thu, 05 Dec 2024 11:53:14 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6337,7 +6337,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 05 Dec 2024 02:31:00 GMT"
+          "Value": "Thu, 05 Dec 2024 11:53:14 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6382,7 +6382,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 05 Dec 2024 02:31:00 GMT"
+          "Value": "Thu, 05 Dec 2024 11:53:14 GMT"
         },
         {
           "Name": "Cache-Control",
