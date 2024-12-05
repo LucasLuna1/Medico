@@ -30,7 +30,8 @@ namespace TurneroMedico.Controllers
         // GET: Turno/Create
         public IActionResult Create()
         {
-            return View();
+            return View("~/Views/Turnos/Create.cshtml");
+
         }
 
         // POST: Turno/Create
