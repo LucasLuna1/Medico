@@ -29,8 +29,8 @@
                 <td>@Html.DisplayFor(modelItem => item.Fecha)</td>
                 <td>@Html.DisplayFor(modelItem => item.Hora)</td>
                 <td>
-                    <a asp-action="Edit" asp-controller="Turno" asp-route-id="@item.Id">Editar</a> |
-                    <a asp-action="Delete" asp-controller="Turno" asp-route-id="@item.Id">Eliminar</a>
+                    <a class="editar" asp-action="Edit" asp-controller="Turno" asp-route-id="@item.Id">Editar</a> |
+                    <a class="eliminar" asp-action="Delete" asp-controller="Turno" asp-route-id="@item.Id">Eliminar</a>
                 </td>
             </tr>
         }

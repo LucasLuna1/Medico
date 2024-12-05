@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FUnFNVOZzhI=",
+  "dgSpecHash": "ijwbJZmG0wY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lucas\\Desktop\\Turno\\Medico\\TurneroMedico.csproj",
+  "projectFilePath": "C:\\Users\\Lucas\\Desktop\\Nueva carpeta\\Medico\\TurneroMedico.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lucas\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Lucas\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

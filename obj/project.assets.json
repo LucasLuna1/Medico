@@ -2068,11 +2068,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lucas\\Desktop\\Turno\\Medico\\TurneroMedico.csproj",
+      "projectUniqueName": "C:\\Users\\Lucas\\Desktop\\Nueva carpeta\\Medico\\TurneroMedico.csproj",
       "projectName": "TurneroMedico",
-      "projectPath": "C:\\Users\\Lucas\\Desktop\\Turno\\Medico\\TurneroMedico.csproj",
+      "projectPath": "C:\\Users\\Lucas\\Desktop\\Nueva carpeta\\Medico\\TurneroMedico.csproj",
       "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lucas\\Desktop\\Turno\\Medico\\obj\\",
+      "outputPath": "C:\\Users\\Lucas\\Desktop\\Nueva carpeta\\Medico\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

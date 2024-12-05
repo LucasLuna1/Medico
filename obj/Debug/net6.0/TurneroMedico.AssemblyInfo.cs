@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TurneroMedico")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+745d95e75adc38700cbad7463279354d0fe9a5be")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+37793202bfaeaf50865e103dcf473198f53b19bf")]
 [assembly: System.Reflection.AssemblyProductAttribute("TurneroMedico")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TurneroMedico")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
